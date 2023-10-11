@@ -1,0 +1,19 @@
+#container {
+    display: flex;
+    justify-content: space-around;
+    background-color: black;
+    width: 800px;
+    height: 800px;
+    
+}
+
+.title {
+   text-align: center;
+   
+}
+
+#container div {
+    background-color: white;
+   
+    border: 1px white;
+}
