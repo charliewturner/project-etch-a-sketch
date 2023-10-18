@@ -1,30 +1,26 @@
 const container = document.getElementById("container");
 console.log(container);
+let gridSquare;
 
 
 
 //create default board
 function defaultGrid() {
-    makeRows(16);
-    makeCells(16);
+    generateGrid(16);
+
 }
 
-function makeRows(rowNum) {
-    for (i = 0; i < rowNum; i++) {
-        let rows = document.createElement('div');
-        container.appendChild(rows);
+function generateGrid(gridWidth) {
+    let totalSquares = gridWidth * gridWidth;
+    for (i = 0; i < totalSquares; i++) {
+        gridSquare = document.createElement('div');
+        container.appendChild(gridSquare);
+
     }
 
 }
- function makeCells(cellNum) {
-    for (i = 0; i < rowNum; i++) {
-        for (j = 0; j < cellNum; j++) {
-            let cells = document.createElement('div');
-            container.appendChild(cells);
-        }
-    }
 
-} 
+
 
 
 //create onHover drawing function
