@@ -1,25 +1,35 @@
 const container = document.getElementById("container");
+const gridRow = document.getElementById("gridRow");
 console.log(container);
 let gridSquare;
-
+let rows;
+let columns;
 
 
 //create default board
 function defaultGrid() {
-    generateGrid(16);
-
+    generateRows(16);
+    generateColumns(16);
 }
 
-function generateGrid(gridWidth) {
-    let totalSquares = gridWidth * gridWidth;
-    for (i = 0; i < totalSquares; i++) {
-        gridSquare = document.createElement('div');
-        container.appendChild(gridSquare);
-
-    }
-
+function generateRows(gridWidth) {
+    for (rows = 0; rows <= gridWidth; rows++) {
+        let row = document.createElement('div');
+        row.setAttribute("id", "gridRow");
+        container.appendChild(row);
+        
+    };
 }
 
+
+
+ function generateColumns(gridWidth) {
+    for (columns = 0; columns <= gridWidth; columns++) {
+        let column = document.createElement('div');
+        column.setAttribute("id", "gridColumn");
+        gridRow.appendChild(document.createElement('div'));
+    };
+}
 
 
 

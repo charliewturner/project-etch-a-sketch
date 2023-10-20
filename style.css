@@ -1,12 +1,14 @@
-div#container {
+#container {
     display: flex;
+     flex-direction: row;
     width: 800px;
     height: 800px;
     flex-wrap: wrap;
-    box-sizing: content-box;
+    flex-grow: 1;
     border-style: solid;
-    border-width: 3px;
-    
+    border-color: black 1px;
+
+
 }
 
 .title {
@@ -15,11 +17,12 @@ div#container {
 }
 
 div div {
-    box-sizing: border-box;
-    flex: 1 1 auto;
-    min-width: 50px;
-    min-height: 50px;
+    display: flex;
+    
+    flex-grow: 1;
     border-style: solid;
     border-width: 1px;
     border-color: black;
+   
 }
+
