@@ -17,12 +17,12 @@ function defaultGrid() {
 }
 
 function generateRows(gridWidth) {
-    for (rows = 0; rows <= gridWidth; rows++) {
+    for (rows = 1; rows <= gridWidth; rows++) {
         let row = document.createElement('div');
         row.setAttribute("id", "gridRow");
         container.appendChild(row);
 
-        for (columns = 0; columns <= gridWidth; columns++) {
+        for (columns = 1; columns <= gridWidth; columns++) {
             let column = document.createElement('div');
             column.setAttribute("id", "gridColumn");
             row.appendChild(column);
@@ -38,17 +38,19 @@ function generateRows(gridWidth) {
 
 resetButton.addEventListener("click", newGrid);
 
-//create onHover drawing function
-
-
-//add clear grid function
-
 /*new grid function must contain prompt to query the 
     number of squares for grid dimensions*/
 function newGrid() {
     clearGrid();
     let newGridSize = prompt("How many squares would you like the grid to have on each side?", "");
-    generateRows(newGridSize);
+    if (newGridSize > 200) {
+        alert("Invalid input. Please choose a smaller grid.");
+    } else if (newGridSize < 1) {
+        alert("Invalid input. Please select a larger grid size");
+    } else {
+        generateRows(newGridSize);
+    }
+    
 };
 function clearGrid() {
     container.innerHTML='';   
