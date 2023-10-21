@@ -10,7 +10,7 @@ let columns;
 let colourSelection = "black";
 
 
-//create default board
+
 function defaultGrid() {
     generateRows(16);
     generateColumns(16);
@@ -27,19 +27,19 @@ function generateRows(gridWidth) {
             column.setAttribute("id", "gridColumn");
             row.appendChild(column);
 
-            column.addEventListener("mouseover", function() {
-               column.style.backgroundColor = colourSelection;
+            column.addEventListener("mouseover", function () {
+                column.style.backgroundColor = colourSelection;
             })
         };
     };
-
 }
 
 
+blackButton.addEventListener("click", blackColour);
 resetButton.addEventListener("click", newGrid);
+eraserButton.addEventListener("click", eraseFunction);
+randomColourButton.addEventListener("click", randomColour);
 
-/*new grid function must contain prompt to query the 
-    number of squares for grid dimensions*/
 function newGrid() {
     clearGrid();
     let newGridSize = prompt("How many squares would you like the grid to have on each side?", "");
@@ -50,14 +50,23 @@ function newGrid() {
     } else {
         generateRows(newGridSize);
     }
-    
 };
+
 function clearGrid() {
-    container.innerHTML='';   
+    container.innerHTML = '';
 }
 
-//add RGB colour function and button
-//add opacity function
+function eraseFunction() {
+    colourSelection = "white";
+}
 
+function blackColour() {
+    colourSelection = "black";
+}
+
+function randomColour() {
+    let color = 'rgb(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ')';
+    colourSelection = color;
+}
 
 defaultGrid();
