@@ -3,6 +3,7 @@ const gridRow = document.getElementById("gridRow");
 let gridSquare;
 let rows;
 let columns;
+let colourSelection = "black";
 
 
 //create default board
@@ -19,8 +20,12 @@ function generateRows(gridWidth) {
 
         for (columns = 0; columns <= gridWidth; columns++) {
             let column = document.createElement('div');
-            column.setAttribute("id", "gridColumn" + columns);
+            column.setAttribute("id", "gridColumn");
             row.appendChild(column);
+
+            column.addEventListener("mouseover", function() {
+               column.style.backgroundColor = colourSelection;
+            })
         };
     };
 
@@ -28,38 +33,24 @@ function generateRows(gridWidth) {
 
 
 
-function generateColumns(gridWidth) {
-
-}
-
-
-
 //create onHover drawing function
-function draw() {
 
-}
 
 //add clear grid function
 function clearGrid() {
 
 }
 
-//add clear grid/create new grid button
-
-
-//add create custom grid function
 /*new grid function must contain prompt to query the 
     number of squares for grid dimensions*/
 function newGrid() {
     let newGridSize = prompt("How many squares would you like the grid to have on each side?", "");
-    console.log(newGridSize);
+    clearGrid();
+    generateRows(newGridSize);
 };
-
-
-defaultGrid();
-
-
-
 
 //add RGB colour function and button
 //add opacity function
+
+
+defaultGrid();
