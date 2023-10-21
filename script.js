@@ -1,6 +1,5 @@
 const container = document.getElementById("container");
 const gridRow = document.getElementById("gridRow");
-console.log(container);
 let gridSquare;
 let rows;
 let columns;
@@ -17,18 +16,20 @@ function generateRows(gridWidth) {
         let row = document.createElement('div');
         row.setAttribute("id", "gridRow");
         container.appendChild(row);
-        
+
+        for (columns = 0; columns <= gridWidth; columns++) {
+            let column = document.createElement('div');
+            column.setAttribute("id", "gridColumn" + columns);
+            row.appendChild(column);
+        };
     };
+
 }
 
 
 
- function generateColumns(gridWidth) {
-    for (columns = 0; columns <= gridWidth; columns++) {
-        let column = document.createElement('div');
-        column.setAttribute("id", "gridColumn");
-        gridRow.appendChild(document.createElement('div'));
-    };
+function generateColumns(gridWidth) {
+
 }
 
 
