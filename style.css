@@ -1,14 +1,13 @@
+
+
 #container {
     display: flex;
-    flex-direction: row;
     width: 800px;
     height: 800px;
-    flex-wrap: wrap;
-    flex-grow: 1;
     border-style: solid;
     border-color: black 1px;
-
-
+    justify-content: center;
+    margin: auto;
 }
 
 .title {
@@ -16,7 +15,15 @@
     margin: 20px
 }
 
-
+#buttons {
+    width: 800px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    padding: 5px;
+}
 
 #gridRow {
     display: flex;

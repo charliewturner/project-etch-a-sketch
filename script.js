@@ -2,8 +2,8 @@ const container = document.getElementById("container");
 const gridRow = document.getElementById("gridRow");
 const randomColourButton = document.querySelector("#randomColour");
 const blackButton = document.querySelector("#black");
-const eraserButton = document.querySelector("eraser");
-const resetButton = document.querySelector("reset");
+const eraserButton = document.querySelector("#eraser");
+const resetButton = document.querySelector("#reset");
 let gridSquare;
 let rows;
 let columns;
@@ -36,24 +36,23 @@ function generateRows(gridWidth) {
 }
 
 
-
+resetButton.addEventListener("click", newGrid);
 
 //create onHover drawing function
 
 
 //add clear grid function
-function clearGrid() {
-    generateRows(0);
-    generateColumns(0);
-}
 
 /*new grid function must contain prompt to query the 
     number of squares for grid dimensions*/
 function newGrid() {
-    let newGridSize = prompt("How many squares would you like the grid to have on each side?", "");
     clearGrid();
+    let newGridSize = prompt("How many squares would you like the grid to have on each side?", "");
     generateRows(newGridSize);
 };
+function clearGrid() {
+    container.innerHTML='';   
+}
 
 //add RGB colour function and button
 //add opacity function
