@@ -1,5 +1,9 @@
 const container = document.getElementById("container");
 const gridRow = document.getElementById("gridRow");
+const randomColourButton = document.querySelector("#randomColour");
+const blackButton = document.querySelector("#black");
+const eraserButton = document.querySelector("eraser");
+const resetButton = document.querySelector("reset");
 let gridSquare;
 let rows;
 let columns;
@@ -33,12 +37,14 @@ function generateRows(gridWidth) {
 
 
 
+
 //create onHover drawing function
 
 
 //add clear grid function
 function clearGrid() {
-
+    generateRows(0);
+    generateColumns(0);
 }
 
 /*new grid function must contain prompt to query the 
